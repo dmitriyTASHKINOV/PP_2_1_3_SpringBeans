@@ -9,18 +9,19 @@ import java.sql.ResultSet;
 @Component
 public class AnimalsCage {
 
-    @Autowired
+
     private Timer timer;
     @Autowired
     @Qualifier("cat")
-    private Animal animal;
+    private Animal cat;
     @Autowired
     @Qualifier("dog")
-    private Animal animal1;
+    private Animal dog;
 
     public void whatAnimalSay() {
         System.out.println("Say:");
-        System.out.println(animal.toString());
+        System.out.println(cat.toString());
+        System.out.println(dog.toString());
         System.out.println("At:");
         System.out.println(new Timer().getTime());
         System.out.println("________________________");
@@ -28,5 +29,8 @@ public class AnimalsCage {
     public Timer getTimer() {
         return timer;
     }
-
+    @Autowired
+    public void setTimer(Timer timer) {
+        this.timer = timer;
+    }
 }

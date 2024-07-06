@@ -15,8 +15,10 @@ public class Application {
         for (int i = 0; i < 5; i++) {
             AnimalsCage bean =
                     context.getBean(AnimalsCage.class);
+            bean.setTimer(timer);
             bean.whatAnimalSay();
         }
+
     }
 
 }
